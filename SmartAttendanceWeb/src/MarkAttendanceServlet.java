@@ -20,7 +20,12 @@ public class MarkAttendanceServlet extends HttpServlet {
             folder.mkdirs();
         }
 
-        // Write attendance
+    if (FaceRecognition.recognizeFace()) {
+    FileWriter fw = new FileWriter(
+        "C:/attendance/attendance.txt", true);
+    fw.write("Student1 | " + new Date() + " | Present\n");
+    fw.close();
+    }
         FileWriter fw = new FileWriter(
                 "C:/attendance/attendance.txt", true);
 
