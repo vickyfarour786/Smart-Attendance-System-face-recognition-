@@ -10,7 +10,11 @@
 <form action="MarkAttendance" method="post">
     <button type="submit">Mark Attendance (Face Recognition)</button>
 </form>
+<br><br>
 
+<form action="RegisterFace" method="post">
+    <button type="submit">Register New Face</button>
+</form>
 <br><br>
 
 <a href="attendance.jsp">
