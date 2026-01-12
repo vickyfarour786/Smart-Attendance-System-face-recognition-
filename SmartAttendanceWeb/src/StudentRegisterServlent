@@ -1,0 +1,24 @@
+import java.io.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/StudentRegisterServlet")
+public class StudentRegisterServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+            throws IOException {
+
+        String uid = req.getParameter("uid");
+        String name = req.getParameter("name");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        FileWriter fw = new FileWriter(
+            "C:/attendance/students.txt", true);
+
+        fw.write(uid + "|" + name + "|" + username + "|" + password + "\n");
+        fw.close();
+
+        res.sendRedirect("index.jsp");
+    }
+}
