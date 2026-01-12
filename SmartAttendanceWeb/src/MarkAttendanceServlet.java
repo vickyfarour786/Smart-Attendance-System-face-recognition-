@@ -1,12 +1,7 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Date;
-
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 @WebServlet("/MarkAttendance")
 public class MarkAttendanceServlet extends HttpServlet {
@@ -14,23 +9,25 @@ public class MarkAttendanceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws IOException {
 
-        // Ensure folder exists
-        File folder = new File("C:/attendance");
-        if (!folder.exists()) {
-            folder.mkdirs();
+        // ✅ ADD THIS LINE (SUBJECT COMES FROM index.jsp)
+        String subject = req.getParameter("subject");
+
+        File dir = new File("C:/attendance");
+        if (!dir.exists()) {
+            dir.mkdirs();
         }
 
-    if (FaceRecognition.recognizeFace()) {
-    FileWriter fw = new FileWriter(
-        "C:/attendance/attendance.txt", true);
-    fw.write("Student1 | " + new Date() + " | Present\n");
-    fw.close();
-    }
-        FileWriter fw = new FileWriter(
+        // Face recognition check
+        if (FaceRecognition.recognizeFace()) {
+
+            FileWriter fw = new FileWriter(
                 "C:/attendance/attendance.txt", true);
 
-        fw.write("Student1 | " + new Date() + " | Present\n");
-        fw.close();
+            fw.write("Student1 | " + subject + " | "
+                    + new Date() + " | Present\n");
+
+            fw.close();
+        }
 
         // Redirect to attendance page
         res.sendRedirect("attendance.jsp");
