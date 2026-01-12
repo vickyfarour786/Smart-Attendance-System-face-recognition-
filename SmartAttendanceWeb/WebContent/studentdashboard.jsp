@@ -22,7 +22,7 @@ String uid = request.getParameter("uid");
 
 <br><br>
 
-<a href="studentLogin.jsp">
+<a href="LogoutServlet">
     <button>Logout</button>
 </a>
 
