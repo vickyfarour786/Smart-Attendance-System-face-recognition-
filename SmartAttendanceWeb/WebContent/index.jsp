@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Admin Dashboard</title>
     <style>
         body{
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background:#f5f5f5;
         }
         h2{
             text-align:center;
+            color:#c40000;
         }
-        .grid{
+        .container{
+            width:70%;
+            margin:30px auto;
             display:grid;
             grid-template-columns:repeat(2,1fr);
             gap:20px;
-            width:70%;
-            margin:auto;
         }
         .card{
             background:white;
-            padding:20px;
-            border-radius:8px;
-            box-shadow:0 0 8px #aaa;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
             text-align:center;
         }
         button{
-            padding:8px 15px;
-            background:#b30000;
+            padding:10px 22px;
+            background:#c40000;
             color:white;
             border:none;
-            border-radius:4px;
+            border-radius:20px;
+            cursor:pointer;
         }
         .bottom{
             text-align:center;
@@ -37,50 +39,59 @@
         }
     </style>
 </head>
+
 <body>
 
-<h2>My Subjects</h2>
+<h2>Admin Dashboard</h2>
 
-<div class="grid">
+<div class="container">
 
-<div class="card">
-    <h3>Java Programming</h3>
-    <form action="MarkAttendance" method="post">
-        <input type="hidden" name="subject" value="Java Programming">
-        <button type="submit">Mark Attendance</button>
-    </form>
-</div>
+    <!-- JAVA PROGRAMMING -->
+    <div class="card">
+        <h3>Java Programming</h3>
+        <form action="MarkAttendance" method="post">
+            <input type="hidden" name="subject" value="Java Programming">
+            <button type="submit">Mark Attendance</button>
+        </form>
+    </div>
 
-<div class="card">
-    <h3>Major Project</h3>
-    <form action="MarkAttendance" method="post">
-        <input type="hidden" name="subject" value="Major Project">
-        <button type="submit">Mark Attendance</button>
-    </form>
-</div>
+    <!-- MAJOR PROJECT -->
+    <div class="card">
+        <h3>Major Project</h3>
+        <form action="MarkAttendance" method="post">
+            <input type="hidden" name="subject" value="Major Project">
+            <button type="submit">Mark Attendance</button>
+        </form>
+    </div>
 
-<div class="card">
-    <h3>Project Management</h3>
-    <form action="MarkAttendance" method="post">
-        <input type="hidden" name="subject" value="Project Management">
-        <button type="submit">Mark Attendance</button>
-    </form>
-</div>
+    <!-- PROJECT MANAGEMENT -->
+    <div class="card">
+        <h3>Project Management</h3>
+        <form action="MarkAttendance" method="post">
+            <input type="hidden" name="subject" value="Project Management">
+            <button type="submit">Mark Attendance</button>
+        </form>
+    </div>
 
-<div class="card">
-    <h3>Data Interpretation Lab</h3>
-    <form action="MarkAttendance" method="post">
-        <input type="hidden" name="subject" value="Data Interpretation Lab">
-        <button type="submit">Mark Attendance</button>
-    </form>
-</div>
+    <!-- DATA INTERPRETATION LAB -->
+    <div class="card">
+        <h3>Data Interpretation Lab</h3>
+        <form action="MarkAttendance" method="post">
+            <input type="hidden" name="subject" value="Data Interpretation Lab">
+            <button type="submit">Mark Attendance</button>
+        </form>
+    </div>
 
 </div>
 
 <div class="bottom">
-    <a href="attendance.jsp"><button>View Attendance</button></a>
+    <a href="attendance.jsp">
+        <button>View Attendance</button>
+    </a>
     <br><br>
-    <a href="login.jsp"><button>Logout</button></a>
+    <a href="LogoutServlet">
+        <button>Logout</button>
+    </a>
 </div>
 
 </body>
