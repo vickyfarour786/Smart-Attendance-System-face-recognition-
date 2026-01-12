@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
-    <style>
-        body{
-            font-family: Arial;
-            background:#f2f2f2;
-        }
-        .box{
-            width:300px;
-            margin:120px auto;
-            padding:20px;
-            background:white;
-            border-radius:8px;
-            box-shadow:0 0 10px #aaa;
-            text-align:center;
-        }
-        input{
-            width:90%;
-            padding:8px;
-            margin:8px 0;
-        }
-        button{
-            padding:8px 20px;
-            background:#b30000;
-            color:white;
-            border:none;
-            border-radius:4px;
-        }
-    </style>
+<title>Login</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+}
+.header{
+    text-align:center;
+    padding:25px;
+}
+.header h1{
+    color:#c40000;
+}
+.container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:40px;
+}
+.card{
+    background:white;
+    width:300px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    text-align:center;
+}
+.card h3{
+    margin-bottom:10px;
+}
+.card p{
+    color:#555;
+}
+.btn{
+    margin-top:15px;
+    background:#c40000;
+    color:white;
+    border:none;
+    padding:10px 22px;
+    border-radius:20px;
+    cursor:pointer;
+}
+.footer{
+    background:#c40000;
+    height:120px;
+    margin-top:60px;
+}
+</style>
 </head>
+
 <body>
 
-<div class="box">
-    <h2>Admin Login</h2>
-    <form action="LoginServlet" method="post">
-        <input type="text" name="userid" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
+<div class="header">
+    <h1>CU Attendance System</h1>
+    <p>Smart Attendance Using Face Recognition</p>
 </div>
+
+<div class="container">
+
+    <!-- STUDENT LOGIN -->
+    <div class="card">
+        <h3>Student Login</h3>
+        <p>Login with UID and password to check attendance.</p>
+        <a href="studentLogin.jsp">
+            <button class="btn">Login Now</button>
+        </a>
+    </div>
+
+    <!-- ADMIN LOGIN -->
+    <div class="card">
+        <h3>Admin Login</h3>
+        <p>Login to mark attendance using face recognition.</p>
+        <a href="adminLogin.jsp">
+            <button class="btn">Login Now</button>
+        </a>
+    </div>
+
+</div>
+
+<div class="footer"></div>
 
 </body>
 </html>
